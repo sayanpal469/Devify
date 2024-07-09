@@ -3,6 +3,7 @@ import Nav from "./Nav/Nav";
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
+import Service from "./Pages/Service";
 
 function App() {
   return (
