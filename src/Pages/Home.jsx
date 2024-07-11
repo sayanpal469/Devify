@@ -8,7 +8,8 @@ import textContainer_1 from "../assets/landing/textContainer_1.png"
 import textContainer_2 from "../assets/landing/textContainer_2.png"
 import textContainer_3 from "../assets/landing/textContainer_3.png"
 import textContainer_4 from "../assets/landing/textContainer_4.png"
-
+import textContainer5 from "../assets/landing/textContainer5.png"
+import textContainer_5 from "../assets/landing/textContainer_5.png"
 import Icon1 from "../assets/landing/Icon1.png"
 import Icon2 from "../assets/landing/Icon2.png"
 import Icon3 from "../assets/landing/Icon3.png"
@@ -18,6 +19,7 @@ import Icon7 from "../assets/landing/Icon7.png"
 import Icon6 from "../assets/landing/Icon6.png"
 import Profile1 from "../assets/landing/Profile1.png"
 import Profile2 from "../assets/landing/Profile2.png"
+import logo from "../assets/Logo.png"
 import { FaPlus } from "react-icons/fa6";
 import { useState } from "react"
 import ContactForm from "../commponents/ContactForm"
@@ -376,6 +378,20 @@ const handleBorderClick2 = (index) =>{
       ))}
     </div>
     </div>
+
+    <div className="relative">
+              <img src={textContainer5} alt="textContainer5" className="object-contain w-full h-full relative hidden md:block" />
+              <img src={textContainer_5} alt="textContainer_5" className="object-contain w-full h-full relative md:hidden" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center py-12 TextContainer gap-8">
+                <div className="flex justify-center">
+                  <img src={logo} alt="logo" className="w-12"/>
+                </div>
+                <div className="flex flex-col text-center gap-8 md:gap-4 px-4 md:px-0">
+                  <p className="text-white font-semibold text-2xl md:text-4xl">Thank you for your Interest in Devify.</p>
+                  <p className="text-white text-xs">We would love to hear from you and discuss how we can help bring your digital ideas to life. Here are the different ways you can get in touch with us.</p>
+                </div>
+              </div>
+          </div>
 
      <ContactForm/>
       </div>

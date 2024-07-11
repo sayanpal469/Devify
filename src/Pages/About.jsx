@@ -1,9 +1,26 @@
 import square from "../assets/about/square.png";
-import logo from "../assets/about/Logo.png";
+import logo from "../assets/Logo.png"
+import ContactFormModal from "../commponents/ContactFormModal";
+import { useState } from "react";
 
 const About = () => {
+  const [openModal, setOpenModal] = useState(false)
+
+ const handleModalOpen = ()=>{
+  setOpenModal(true);
+ }
+ const handleModalClose= ()=>{
+  setOpenModal(false);
+ }
+
   return (
     <main className="main">
+
+{ openModal ? 
+(<ContactFormModal
+close = {handleModalClose}
+/>) : null}
+
       <section className="hero flex justify-center items-center text-white text-center">
         <div>
           <h1 className="text-5xl font-semibold mb-5">About Us</h1>
@@ -180,7 +197,8 @@ const About = () => {
               Shape the Future of Digital Innovation.
             </p>
           </div>
-          <button className="rounded-md p-2 text-black bg-[#9EFF00] text-sm font-semibold w-full lg:w-24">
+          <button onClick={handleModalOpen}
+           className="rounded-md p-2 text-black bg-[#9EFF00] text-sm font-semibold w-full lg:w-24">
             Start Project
           </button>
         </div>

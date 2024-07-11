@@ -34,11 +34,27 @@ import qatLogo1 from "../assets/service/qat/Icon1.png";
 import qatLogo2 from "../assets/service/qat/Icon2.png";
 import qatLogo3 from "../assets/service/qat/Icon3.png";
 import qatLogo4 from "../assets/service/qat/Icon4.png";
-import logo from "../assets/about/Logo.png";
+import logo from "../assets/Logo.png"
+import ContactFormModal from "../commponents/ContactFormModal";
+import { useState } from "react";
 
 const Service = () => {
+  const [openModal, setOpenModal] = useState(false)
+
+  const handleModalOpen = ()=>{
+   setOpenModal(true);
+  }
+  const handleModalClose= ()=>{
+   setOpenModal(false);
+  }
   return (
     <main>
+
+ { openModal ? 
+(<ContactFormModal
+close = {handleModalClose}
+/>) : null}
+
       <section className="hero flex justify-center items-center text-white text-center p-5">
         <div>
           <h1 className="text-4xl lf:text-5xl font-semibold mb-5">Our Services</h1>
@@ -385,7 +401,8 @@ const Service = () => {
               collaboration and a unified vision for your digital product.
             </p>
           </div>
-          <button className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5">
+          <button onClick={handleModalOpen}
+          className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5">
             Start Project
           </button>
         </div>
